@@ -6,12 +6,19 @@
  */
 (function(window) {
     var
+    // 跟元素
         C_root,
+        // 版本
         C_version = "1.0.0",
+        // 框架C对象
         C = function(selector) {
             return new C.fn.init(selector);
         };
-
+    /**
+     * C对象的原型设置
+     * 初始化init方法
+     * 常用工具方法
+     */
     C.fn = C.prototype = {
         C: C_version,
         constructor: C,
@@ -30,8 +37,16 @@
 
     };
 
+    /**
+     * 让C对象实例的原型与C的原型相同
+     */
     C.fn.init.prototype = C.fn;
 
+    /**
+     * C对象的扩展方法
+     * 扩展工具方法
+     * 扩展到C对象下
+     */
     C.extend = C.fn.extend = function() {
         var options, name, src, copy, copyIsArray, clone,
             target = arguments[0] || {},
